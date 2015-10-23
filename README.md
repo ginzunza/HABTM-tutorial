@@ -1,5 +1,5 @@
 # HABTM-tutorial
-Cómo insertar, mediante un formulario, un elemento de un modelo que está relacionado con otro mediante "has and belongs to many" en Rails.
+Cómo insertar, mediante un formulario, un elemento de un modelo que está relacionado con otro mediante "has and belongs to many" en Rails.<br/>
 Si se tienen dos modelos:
 ```ruby
 class Product < ActiveRecord::Base
