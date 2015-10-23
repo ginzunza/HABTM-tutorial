@@ -63,7 +63,7 @@ Finalmente, dado a que branch_attributes se envía con la siguiente estructura:
         }
     }
 ```
-Debemos hacer un pequeño hack, que consiste en sobreescribir el método set de branch_attributes:
+En la clase Product, debemos hacer un pequeño hack, que consiste en sobreescribir el método set de branch_attributes:
 ```ruby
 def branches_attributes=(p)
   p.each do |k,v|
