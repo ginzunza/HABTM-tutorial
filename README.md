@@ -72,3 +72,5 @@ def branches_attributes=(p)
 end
 ```
 De esta manera insertamos una branch en products, sin que se cree una nueva sucursal y generando la relación en el modelo branches_products.
+
+Agradecimientos a @pangui que ayudó a encontrar la solución.
