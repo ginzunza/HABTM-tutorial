@@ -49,3 +49,9 @@ def new
   @product.branches.build
 end
 ```
+En el secure_params del controlador de Products, se deben agregar los atributos de Branches, para que sean permitidos en la inserción del formulario. 
+```ruby
+def secure_params
+  params.require(:product).permit(:name,branches_attributes:[:id])
+end
+```
