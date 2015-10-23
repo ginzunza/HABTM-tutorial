@@ -55,3 +55,20 @@ def secure_params
   params.require(:product).permit(:name,branches_attributes:[:id])
 end
 ```
+Finalmente, dado a que branch_attributes se envía con la siguiente estructura:
+```ruby
+"branches_attributes" => {
+        "0" => {
+            "id" => "12"
+        }
+    }
+```
+Debemos hacer un pequeño hack, que consiste en sobreescribir el método set de branch_attributes:
+```ruby
+def branches_attributes=(p)
+  p.each do |k,v|
+    self.branches << Branch.find(v[:id])
+  end
+end
+```
+De esta manera insertamos una branch en products, sin que se cree una nueva sucursal y generando la relación en el modelo branches_products.
