@@ -11,7 +11,7 @@ class Branch < ActiveRecord::Base
 end
 ```
 
-Se hizo la siguiente migración, para generar la tabla intermedia de la relación:
+Se debe hacer la siguiente migración, para generar la tabla intermedia de la relación:
 ```ruby
 class CreateBranchesAndProducts < ActiveRecord::Migration
   def change
@@ -24,7 +24,7 @@ end
 
 ```
 
-Luego, para el caso de la inserción de un nuevo producto, en donde se busque relacionar éste con una sucursal (branch) ya existente, el formulario sería de la siguiente manera:
+Luego, para el caso de la inserción de un nuevo producto, en donde se busque relacionar éste con una sucursal (branch) ya existente, el formulario debe ser de la siguiente manera:
 ```ruby
 <%= form_for(@product) do |f| %>
   <%= f.label :name, "Nombre" %><br>
