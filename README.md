@@ -55,7 +55,7 @@ def secure_params
   params.require(:product).permit(:name,branches_attributes:[:id])
 end
 ```
-Finalmente, dado a que branch_attributes se envía con la siguiente estructura:
+Finalmente, dado a que branches_attributes se envía con la siguiente estructura:
 ```ruby
 "branches_attributes" => {
         "0" => {
