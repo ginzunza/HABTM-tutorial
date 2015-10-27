@@ -35,7 +35,7 @@ Luego, para el caso de la inserción de un nuevo producto, en donde se busque re
   <% end %>
 <% end %>
 ```
-Por simplicidad, se asumió que el producto posee sólo el atributo "name", lo mismo para sucursales. Como :branches es un atributo embebido de producto, para que se pueda utilizar en el formulario, se debe modificar el modelo de Products, el cual queda de la siguiente manera:
+Por simplicidad, se asumió que el producto posee sólo el atributo "name", lo mismo para sucursales. Como :branches es un atributo embebido de producto, para que se pueda utilizar en el formulario, se debe modificar el modelo de Product, el cual queda de la siguiente manera:
 ```ruby
 class Product < ActiveRecord::Base
   has_and_belongs_to_many :branches
@@ -63,7 +63,7 @@ Finalmente, dado a que branch_attributes se envía con la siguiente estructura:
         }
     }
 ```
-En la clase Product, debemos hacer un pequeño hack, que consiste en sobreescribir el método set de branch_attributes:
+En la clase Product, debemos hacer un pequeño hack, que consiste en sobreescribir el método set de branches_attributes:
 ```ruby
 def branches_attributes=(p)
   p.each do |k,v|
